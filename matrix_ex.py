@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, make_response
-from model import schedule_optimize
+from model import schedule_optimize, a
+
 app = Flask(__name__)
 
 @app.route('/')
