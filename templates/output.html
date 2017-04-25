@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table {
+    border-collapse: collapse;
+}
+    table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th, td {
+    padding: 8px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover{background-color:#D3D3D3}
+
+a:link, a:visited {
+    background-color: #808080;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Output</title>
+    <h1 align="center">Optimized Trailer Schedule to Balance Rigging Line</h1>
+</head>
+<body>
+    <br>
+    <table border="1" align="center">
+        <tr>
+            <th>Order</th>
+            <th>Trailer Type</th>
+            <th>Trailer Component</th>
+            <th>Associated Weight</th>
+            <th>Max Weight in Rigging Line</th>
+        </tr>
+        {% for i in range(num_trailers) %}
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{type[i]}}</td>
+            <td>{{comp[i]}}</td>
+            <td>{{final_weights[i]}}</td>
+            <td>{{total[i]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="text-align:center">
+          <a href="/">Run Again</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  text-align:center;
+}
+table.table_on_the_left, table.table_on_the_right {
+  display:inline-block;
+}
+table {
+    border-collapse: collapse;
+}
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th, td {
+    padding: 8px;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:hover{background-color:#D3D3D3}
+input[type=submit] {
+    background-color: #808080;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+   <body>
+   <br>
+    <h1 align="center"> Select the Trailers for the Day</h1>
+   <form action="/output" method="post">
+    <br>
+    <br>
+       <!--Daily Trailers-->
+
+      <table border = 1 align="center">
+          <tr>
+               <th> Trailer Type</th>
+               <th> Pinstripes </th>
+               <th> Runway Lights </th>
+               <th> Both </th>
+               <th> Neither </th>
+          </tr>
+
+          <tr>
+              <td>Pontoon</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Moomba</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Chanel</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Allison</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Tige</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Master Craft</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Nautique</td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+              <td>
+                  <input type="number" name="trailer" value="0"/>
+              </td>
+          </tr>
+      </table>
+        <br>
+
+       <!--Set the Weights-->
+
+       <h1 align="center"> Set Weights</h1>
+       <br>
+
+       <!--Table For Trailer Type Weight-->
+       <div style="text-align:center; float:left; margin-left:200px">
+       <table border = 1 class="table_on_the_left">
+          <tr>
+               <th style="background-color:#0000FF"> Trailer Type</th>
+               <th style="background-color:#0000FF"> Associated Weight </th>
+          </tr>
+
+          <tr>
+              <td>Pontoon</td>
+              <td>
+                  <input type="number" name="t_weight" value="5"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Moomba</td>
+              <td>
+                  <input type="number" name="t_weight" value="1"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Chanel</td>
+              <td>
+                  <input type="number" name="t_weight" value="6"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Allison</td>
+              <td>
+                  <input type="number" name="t_weight" value="4"/>
+              </td>
+          </tr>
+           <tr>
+              <td>Tige</td>
+              <td>
+                  <input type="number" name="t_weight" value="2"/>
+              </td>
+          </tr>
+           <tr>
+              <td>Master Craft</td>
+              <td>
+                  <input type="number" name="t_weight" value="2"/>
+              </td>
+          </tr>
+           <tr>
+              <td>Nautique</td>
+              <td>
+                  <input type="number" name="t_weight" value="2"/>
+              </td>
+          </tr>
+
+      </table>
+    </div>
+       <!--Component Weight Table-->
+    <div style="text-align:center; float:right; margin-right:270px">
+       <table border = 1 class="table_on_the_right">
+          <tr>
+               <th style="background-color:#0000FF"> Component Type</th>
+               <th style="background-color:#0000FF"> Associated Weight </th>
+          </tr>
+
+          <tr>
+              <td>Pinstripes</td>
+              <td>
+                  <input type="number" name="c_weight" value="5"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Runway</td>
+              <td>
+                  <input type="number" name="c_weight" value="5"/>
+              </td>
+          </tr>
+          <tr>
+              <td>Both (Pinstripe and Runway)</td>
+              <td>
+                  <input type="number" name="c_weight" value="9"/>
+              </td>
+          </tr>
+          <tr>
+              <td>None</td>
+              <td>
+                  <input type="number" name="c_weight" value="0"/>
+              </td>
+          </tr>
+
+      </table>
+        </div>
+        <br>
+       <br>
+
+       <!--Submit Button-->
+       <div style="float:left; margin-left:60px">
+        <input type="submit" value="Submit"/>
+       </div>
+   </form>
+   <br>
+   </body>
+</html>

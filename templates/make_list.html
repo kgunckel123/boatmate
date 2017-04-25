@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <body>
+
+    <form action="/output" method="post">
+      <table border = 1>
+          <tr>
+               <th> Trailer Number</th>
+               <th> Trailer Type </th>
+               <th> Component </th>
+            </tr>
+
+          {% for i in range(result) %}
+          <tr>
+              <td>{{i+1}}</td>
+              <td>
+                  <select name="type">
+                     <option value="Pontoon">Pontoon</option>
+                     <option value="Moomba">Moomba</option>
+                     <option value="Chanel">Chanel</option>
+                     <option value="Allison">Allison</option>
+                   </select>
+              </td>
+              <td>
+                  <select name="comp">
+                     <option value="Pinstripes">Pinstripes</option>
+                     <option value="Runway">Runway</option>
+                     <option value="Neither">Neither</option>
+                     <option value="Both">Both</option>
+                   </select>
+              </td>
+          </tr>
+          {% endfor %}
+
+      </table>
+        <br>
+        <br>
+        <input type="submit" value="submit"/>
+    </form>
+   <br>
+   </body>
+</html>
