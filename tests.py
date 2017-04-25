@@ -1,5 +1,6 @@
 import unittest
 from model import schedule_optimize
+from helper_functions import make_weights_from_input_dict
 
 
 class TestModel(unittest.TestCase):
@@ -12,6 +13,21 @@ class TestModel(unittest.TestCase):
         expected = {}  # put expected here
         self.assertEqual(val, expected)
 
+    def test_make_weights(self):
+        bases = {'Duck Boat': 5,
+                 'Pontoon': 4}
+
+        components = {'Pinstripe': 5,
+                      'Runway': 5,
+                      'Both': 9,
+                      'Neither': 0}
+        input_dic = {('Duck Boat', 'Pinstripe'): 3,
+                    ('Pontoon', 'Both'):4}
+        output_weights, output_types=make_weights_from_input_dict(input_dic, bases, components)
+        expected_weights=[13, 13, 13, 13, 10, 10, 10]
+        expected_output_types=[]
+        self.assertEqual(output_weights,expected_weights)
+        self.assertEqual(output_types, expected_output_types)
 
 class TestGUI(unittest.TestCase):
 
