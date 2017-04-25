@@ -19,8 +19,3 @@ def make_weights_from_input_dict(input_dict, bases, components):
         types_list.extend(this_items_types)
 
     return weights, types_list
-
-x = ('a','b'), 4
-
-def sortfunc(x):
-    return x[0][0] + x[0][1]
