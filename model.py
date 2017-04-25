@@ -2,6 +2,17 @@ import pulp
 
 # weights of the boats
 
+class BoatMateOptimizer(object):
+
+    def __init__(self, weights):
+        self.weights = weights
+        self.outputdict = dict()
+
+
+    def optimize(self):
+        self.outputdict = schedule_optimize(self.weights)
+
+
 def schedule_optimize(weights):
 
     num_boats = len(weights)
