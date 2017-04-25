@@ -4,6 +4,8 @@ from helper_functions import make_weights_from_input_dict
 
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def home():
    return render_template('Begin.html')
@@ -25,14 +27,16 @@ def result():
       num_trailers=sum(result)
 
       boats = ['Pontoon', 'Moomba', 'Chanel', 'Allison', 'Tige', 'Master Craft', 'Nautique']
-      componets = ['Pinstripes','Runway', 'Both', 'Neither']
-      input_dict = {}
+      components = ['Pinstripes','Runway', 'Both', 'Neither']
+      boat_weights = {boats[i]: t_weight[i] for i in range(len(boats))}
+      comp_weights = {components[i]: c_weight[i] for i in range(len(components))}
+      input_dict = dict()
 
       for boat_num, boat in enumerate(boats):
-         for comp_num, comp in enumerate(componets):
+         for comp_num, comp in enumerate(components):
             input_dict[(boat, comp)] = int(result[boat_num * 4 + comp_num])
 
-      trailer_weights, output_type = make_weights_from_input_dict(input_dict, ) # todo add bases and componets
+      trailer_weights, output_type = make_weights_from_input_dict(input_dict, boat_weights, comp_weights) # todo add bases and componets
 
       final_weights, final_order, running_total = schedule_optimize(trailer_weights)
       type_final = [i for i in range(num_trailers)]
