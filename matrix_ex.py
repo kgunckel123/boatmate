@@ -34,7 +34,7 @@ def result():
 
       for boat_num, boat in enumerate(boats):
          for comp_num, comp in enumerate(components):
-            input_dict[(boat, comp)] = int(result[boat_num * 4 + comp_num])
+            input_dict[(boat, comp)] = int(result[boat_num * len(components) + comp_num])
 
       trailer_weights, output_type = make_weights_from_input_dict(input_dict, boat_weights, comp_weights) # todo add bases and componets
 
