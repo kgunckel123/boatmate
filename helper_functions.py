@@ -1,14 +1,4 @@
 
-
-bases = {'Duck Boat': 5,
-         'Pontoon': 4}
-
-components = {'Pinstripe': 5,
-              'Runway': 5,
-              'Both': 9,
-              'Neither': 0}
-
-
 def make_weights_from_input_dict(input_dict, bases, components):
     weights = []
     types_list = []
@@ -20,7 +10,3 @@ def make_weights_from_input_dict(input_dict, bases, components):
 
     return weights, types_list
 
-x = ('a','b'), 4
-
-def sortfunc(x):
-    return x[0][0] + x[0][1]
