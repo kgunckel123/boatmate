@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from model import schedule_optimize
 from helper_functions import make_weights_from_input_dict
 from helper_functions import writejson, loadjson
+from forms import AddWeight
 
 app = Flask(__name__)
 
@@ -14,6 +15,7 @@ def home():
 @app.route('/change_weights')
 def change_weights():
    if request.method == 'GET':
+      form = AddWeight()
       data_boats = loadjson(data_file_name)
       trailer_list = data_boats['Boats']
       component_list = data_boats['Components']
