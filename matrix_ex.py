@@ -33,7 +33,8 @@ def student():
    data_boats = loadjson(data_file_name)
    trailer_list= data_boats['Boats'].keys()
    component_list=data_boats['Components'].keys()
-   return render_template('matrix_form.html', trailer_list= trailer_list)
+   if request.method == 'POST':
+      return render_template('matrix_form.html', trailer_list= trailer_list, component_list=component_list)
 
 @app.route('/output',methods = ['POST', 'GET'])
 def result():
