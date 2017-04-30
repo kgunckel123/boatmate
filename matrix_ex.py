@@ -23,7 +23,7 @@ def change_weights():
        # process a form
        pass
 
-@app.route('/delete/<string: item_type>/<string: name>')
+@app.route('/delete/<string:item_type>/<string:name>')
 def delete_item(item_type, name):
     boat_data = loadjson(data_file_name)
     boat_data[item_type].pop(name, None)

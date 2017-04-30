@@ -2,5 +2,5 @@
 *.log
 .idea/
 __pycache__/
-.boat_data
+.boat_data.json
 gurobi.log
