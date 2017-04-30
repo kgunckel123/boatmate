@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request, make_response
 from model import schedule_optimize
 from helper_functions import make_weights_from_input_dict
+from helper_functions import writejson, loadjson
 
 app = Flask(__name__)
-
-
 
 @app.route('/')
 def home():
