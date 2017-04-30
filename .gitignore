@@ -2,3 +2,5 @@
 *.log
 .idea/
 __pycache__/
+.boat_data
+gurobi.log
