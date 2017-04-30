@@ -14,8 +14,11 @@ def home():
 @app.route('/change_weights')
 def change_weights():
    if request.method == 'GET':
-       # give a blank form
-       pass
+      data_boats = loadjson(data_file_name)
+      trailer_list = data_boats['Boats'].keys()
+      component_list = data_boats['Components'].keys()
+      return render_template('change_weights.html', trailer_list=trailer_list, component_list=component_list)
+
    if request.method == 'POST':
        # process a form
        pass
@@ -33,8 +36,7 @@ def student():
    data_boats = loadjson(data_file_name)
    trailer_list= data_boats['Boats'].keys()
    component_list=data_boats['Components'].keys()
-   if request.method == 'POST':
-      return render_template('matrix_form.html', trailer_list= trailer_list, component_list=component_list)
+   return render_template('matrix_form.html', trailer_list= trailer_list, component_list=component_list)
 
 @app.route('/output',methods = ['POST', 'GET'])
 def result():
