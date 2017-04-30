@@ -9,14 +9,22 @@ app = Flask(__name__)
 def home():
    return render_template('begin.html')
 
+@app.route('/change_weights')
+def change_weights():
+   if request.method == 'GET':
+       # give a blank form
+       pass
+   if request.method == 'POST':
+       # process a form
+       pass
+
+
 @app.route('/matrix_form', methods=['POST','GET'])
 def student():
    data_boats = loadjson(".boat_data.json")
    trailer_list= data_boats['Boats'].keys()
    component_list=data_boats['Components'].keys()
-   import ipdb; ipdb.set_trace()
-   if request.method == 'POST':
-      return render_template('matrix_form.html', trailer_list= trailer_list)
+   return render_template('matrix_form.html', trailer_list= trailer_list)
 
 @app.route('/output',methods = ['POST', 'GET'])
 def result():
