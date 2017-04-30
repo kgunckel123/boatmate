@@ -25,7 +25,8 @@ class TestModel(unittest.TestCase):
                     ('Pontoon', 'Both'):4}
         output_weights, output_types=make_weights_from_input_dict(input_dic, bases, components)
         expected_weights=[10, 10, 10, 13, 13, 13, 13]
-        expected_output_types=[]
+        expected_output_types=['Duck Boat Pinstripe','Duck Boat Pinstripe','Duck Boat Pinstripe',
+                               'Pontoon Both','Pontoon Both','Pontoon Both','Pontoon Both']
         self.assertEqual(output_weights,expected_weights)
         self.assertEqual(output_types, expected_output_types)
 

@@ -2,6 +2,7 @@ import pulp
 
 # weights of the boats
 
+
 class BoatMateOptimizer(object):
 
     def __init__(self, weights):
@@ -17,6 +18,7 @@ def schedule_optimize(weights):
 
     num_boats = len(weights)
     window_size = 6
+    cbcpath = r'C:\Users\Gunk\AppData\Local\Programs\Python\Python35-32\Lib\site-packages\pulp\solverdir\cbc\win\64\cbc.exe'
 
     prob = pulp.LpProblem("Boat scheduling", pulp.LpMinimize)
 
@@ -43,7 +45,7 @@ def schedule_optimize(weights):
         prob+= sum(x[i][j] for i in range(num_boats))==1
 
 
-    prob.solve(pulp.COIN_CMD(maxSeconds=3))
+    prob.solve(pulp.COIN_CMD(path=cbcpath, maxSeconds=3))
     outputdic=[i for i in range(num_boats)]
     output_order=[i for i in range(num_boats)]
     for v in prob.variables():
