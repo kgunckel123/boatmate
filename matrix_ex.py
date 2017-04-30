@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, redirect
 from model import schedule_optimize
 from helper_functions import make_weights_from_input_dict
 from helper_functions import writejson, loadjson
 
 app = Flask(__name__)
+
+data_file_name = '.boat_data.json'
 
 @app.route('/')
 def home():
@@ -18,10 +20,17 @@ def change_weights():
        # process a form
        pass
 
+@app.route('/delete/<string: item_type>/<string: name>')
+def delete_item(item_type, name):
+    boat_data = loadjson(data_file_name)
+    boat_data[item_type].pop(name, None)
+    writejson(boat_data, data_file_name)
+    return redirect('/change_weights')
+
 
 @app.route('/matrix_form', methods=['POST','GET'])
 def student():
-   data_boats = loadjson(".boat_data.json")
+   data_boats = loadjson(data_file_name)
    trailer_list= data_boats['Boats'].keys()
    component_list=data_boats['Components'].keys()
    if request.method == 'POST':
