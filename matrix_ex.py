@@ -15,8 +15,8 @@ def home():
 def change_weights():
    if request.method == 'GET':
       data_boats = loadjson(data_file_name)
-      trailer_list = data_boats['Boats'].keys()
-      component_list = data_boats['Components'].keys()
+      trailer_list = data_boats['Boats']
+      component_list = data_boats['Components']
       return render_template('change_weights.html', trailer_list=trailer_list, component_list=component_list)
 
    if request.method == 'POST':

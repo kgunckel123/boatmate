@@ -2,7 +2,7 @@
 
 {% block content %}
 <br>
-<h1 align="center"> Select the Trailers for the Day</h1>
+<h1 align="center"> Add/Delete Trailer Types and Components</h1>
     <br>
     <br>
        <table border = 1 class="table_on_the_left">
@@ -11,49 +11,13 @@
                <th style="background-color:#0000FF"> Associated Weight </th>
           </tr>
 
-           {% for trailer in trailer_list %}
+           {% for key,val in trailer_list.items() %}
           <tr>
-              <td></td>
-              <td>
-                  <input type="number" name="t_weight" value="5"/>
-              </td>
+              <td>{{ key }}</td>
+              <td>{{ val }}</td>
           </tr>
-          <tr>
-              <td>Moomba</td>
-              <td>
-                  <input type="number" name="t_weight" value="1"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Chanel</td>
-              <td>
-                  <input type="number" name="t_weight" value="6"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Allison</td>
-              <td>
-                  <input type="number" name="t_weight" value="4"/>
-              </td>
-          </tr>
-           <tr>
-              <td>Tige</td>
-              <td>
-                  <input type="number" name="t_weight" value="2"/>
-              </td>
-          </tr>
-           <tr>
-              <td>Master Craft</td>
-              <td>
-                  <input type="number" name="t_weight" value="2"/>
-              </td>
-          </tr>
-           <tr>
-              <td>Nautique</td>
-              <td>
-                  <input type="number" name="t_weight" value="2"/>
-              </td>
-          </tr>
+           {% endfor %}
+
 
       </table>
        <!--Component Weight Table-->
@@ -62,31 +26,13 @@
                <th style="background-color:#0000FF"> Component Type</th>
                <th style="background-color:#0000FF"> Associated Weight </th>
           </tr>
-
+           {% for key,val in component_list.items() %}
           <tr>
-              <td>Pinstripes</td>
-              <td>
-                  <input type="number" name="c_weight" value="5"/>
-              </td>
+              <td>{{ key }}</td>
+              <td>{{ val }}</td>
           </tr>
-          <tr>
-              <td>Runway</td>
-              <td>
-                  <input type="number" name="c_weight" value="5"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Both (Pinstripe and Runway)</td>
-              <td>
-                  <input type="number" name="c_weight" value="9"/>
-              </td>
-          </tr>
-          <tr>
-              <td>None</td>
-              <td>
-                  <input type="number" name="c_weight" value="0"/>
-              </td>
-          </tr>
+           {% endfor %}
 
       </table>
         <br>
+{% endblock %}
