@@ -1,3 +1,5 @@
+import json
+
 
 def make_weights_from_input_dict(input_dict, bases_weights, components_weights):
     weights = []
@@ -10,3 +12,11 @@ def make_weights_from_input_dict(input_dict, bases_weights, components_weights):
 
     return weights, types_list
 
+
+def loadjson(filename):
+    with open(filename, 'r') as f:
+        return json.load(f)
+
+def writejson(data_dictionary, filename):
+    with open(filename, 'w') as f:
+        json.dump(data_dictionary, f)
