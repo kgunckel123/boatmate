@@ -1,45 +1,5 @@
-<!DOCTYPE html>
-<html>
-<style>
-body {
-  text-align:center;
-}
-table.table_on_the_left, table.table_on_the_right {
-  display:inline-block;
-}
-table {
-    border-collapse: collapse;
-}
-table, td, th {
-    border: 1px solid #ddd;
-    text-align: left;
-}
-th, td {
-    padding: 8px;
-}
-th {
-    background-color: #4CAF50;
-    color: white;
-}
-tr:hover{background-color:#D3D3D3}
-input[type=submit] {
-    background-color: #808080;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-</style>
-<head>
-    <meta charset="UTF-8">
-    <title>Form</title>
-</head>
-   <body>
+{% extends 'base.html' %}
+{% block content %}
    <br>
     <h1 align="center"> Select the Trailers for the Day</h1>
    <form action="/output" method="post">
@@ -50,117 +10,22 @@ input[type=submit] {
       <table border = 1 align="center">
           <tr>
                <th> Trailer Type</th>
-               <th> Pinstripes </th>
-               <th> Runway Lights </th>
-               <th> Both </th>
-               <th> Neither </th>
+              {% for component in component_list %}
+               <th> {{ component }} </th>
+              {% endfor %}
           </tr>
 
+          {% for trailer in trailer_list %}
           <tr>
-              <td>Pontoon</td>
+              <td>{{ trailer }}</td>
+              {% for component in component_list %}
               <td>
                   <input type="number" name="trailer" value="0"/>
               </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
+              {% endfor %}
+          {% endfor %}
           </tr>
-          <tr>
-              <td>Moomba</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Chanel</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Allison</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Tige</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Master Craft</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
-          <tr>
-              <td>Nautique</td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-              <td>
-                  <input type="number" name="trailer" value="0"/>
-              </td>
-          </tr>
+
       </table>
         <br>
 
@@ -266,5 +131,4 @@ input[type=submit] {
        </div>
    </form>
    <br>
-   </body>
-</html>
+{% endblock %}

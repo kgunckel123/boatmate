@@ -14,9 +14,8 @@ def student():
    data_boats = loadjson(".boat_data.json")
    trailer_list= data_boats['Boats'].keys()
    component_list=data_boats['Components'].keys()
-   import ipdb; ipdb.set_trace()
    if request.method == 'POST':
-      return render_template('matrix_form.html', trailer_list= trailer_list)
+      return render_template('matrix_form.html', trailer_list= trailer_list, component_list=component_list)
 
 @app.route('/output',methods = ['POST', 'GET'])
 def result():
