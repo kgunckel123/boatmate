@@ -9,6 +9,16 @@ app = Flask(__name__)
 def home():
    return render_template('begin.html')
 
+@app.route('/change_weights')
+def change_weights():
+   if request.method == 'GET':
+       # give a blank form
+       pass
+   if request.method == 'POST':
+       # process a form
+       pass
+
+
 @app.route('/matrix_form', methods=['POST','GET'])
 def student():
    data_boats = loadjson(".boat_data.json")
