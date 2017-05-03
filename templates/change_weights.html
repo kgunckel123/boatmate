@@ -9,12 +9,14 @@
           <tr>
                <th style="background-color:#0000FF"> Trailer Type</th>
                <th style="background-color:#0000FF"> Associated Weight </th>
+               <th style="background-color:#0000FF"></th>
           </tr>
 
            {% for key,val in trailer_list.items() %}
           <tr>
               <td>{{ key }}</td>
               <td>{{ val }}</td>
+              <td><a href="/delete/Boats/{{ key }}">Delete</a></td>
           </tr>
            {% endfor %}
 
@@ -25,14 +27,39 @@
           <tr>
                <th style="background-color:#0000FF"> Component Type</th>
                <th style="background-color:#0000FF"> Associated Weight </th>
+               <th style="background-color:#0000FF"></th>
           </tr>
            {% for key,val in component_list.items() %}
           <tr>
               <td>{{ key }}</td>
               <td>{{ val }}</td>
+              <td><a href="/delete/Components/{{ key }}">Delete</a></td>
           </tr>
            {% endfor %}
 
       </table>
+    <br>
+    <br>
+    <form action="/change_weights" method="post">
+        <table border = 1 class="table_on_the_left">
+            <tr>
+                <th style="background-color:#0000FF">Name of Model or Component</th>
+                <th style="background-color:#0000FF">Desired Weight</th>
+                <th style="background-color:#0000FF">Type</th>
+            </tr>
+
+            <tr>
+                <td>{{ form.name }}</td>
+                <td>{{ form.weight }}</td>
+                <td>{{ form.item_type }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    <button onclick="location.href='/matrix_form'" type="button" >Back to Trailer Mix</button>
         <br>
 {% endblock %}
